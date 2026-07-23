@@ -1,0 +1,2816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--
+    ============================================================
+    浙江圣熠机械有限公司 - 丝锥销售官网
+    文件名: ShengyiTap.html
+    描述: 圣熠机械丝锥产品销售网站，包含产品展示、在线咨询等功能
+    ============================================================
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣熠机械 - 专业丝锥制造商 | 螺纹加工解决方案</title>
+    <meta name="description" content="浙江圣熠机械专业生产销售各类丝锥产品，包括螺旋丝锥、直柄丝锥、管螺纹丝锥、挤压丝锥等，品质认证，远销日本、美国、德国等国际市场。">
+    <meta name="keywords" content="丝锥, 螺纹加工, 螺旋丝锥, 管螺纹丝锥, 挤压丝锥, 圣熠机械, 浙江丝锥">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://shopcdnpro.grainajz.com/category/81766/1708/32e7a65c64d7a303ea91b87ffed00610/Favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+    /*
+    ============================================================
+    CSS 变量定义 (Design Tokens)
+    配色方案：深蓝(#003366)为主色，工业橙(#E8711A)为强调色
+    ============================================================
+    */
+    :root {
+        /* -------- 颜色系统 -------- */
+        /* 主色：工业深蓝，传达专业与信赖 */
+        --color-primary: #003366;
+        --color-primary-dark: #002244;
+        --color-primary-light: #1a5ca8;
+        --color-primary-subtle: #e6f0ff;
+
+        /* 强调色：工业橙，用于CTA按钮和重点提示 */
+        --color-accent: #E8711A;
+        --color-accent-dark: #cc5f10;
+        --color-accent-light: #f08a3c;
+
+        /* 中性色 */
+        --color-dark: #1a1a1a;
+        --color-medium: #4a4a4a;
+        --color-light: #888888;
+        --color-border: #d0d0d0;
+        --color-surface: #f5f5f5;
+
+        /* 功能色 */
+        --color-success: #2e7d32;
+        --color-error: #c62828;
+        --color-warning: #f57c00;
+
+        /* 背景色 */
+        --color-bg: #ffffff;
+        --color-bg-alt: #f0f4f8;
+
+        /* -------- 字体系统 -------- */
+        --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --font-size-xs: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size-base: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-4xl: 2.25rem;
+        --font-size-5xl: 3rem;
+
+        /* -------- 间距系统 (8px 基准网格) -------- */
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
+        --space-20: 5rem;
+        --space-24: 6rem;
+
+        /* -------- 圆角系统 -------- */
+        --radius-sm: 0.375rem;
+        --radius-md: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-xl: 1rem;
+        --radius-full: 9999px;
+
+        /* -------- 阴影系统 -------- */
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+        --shadow-md: 0 4px 12px rgba(0,0,0,0.10);
+        --shadow-lg: 0 10px 24px rgba(0,0,0,0.12);
+        --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+
+        /* -------- 过渡动画 -------- */
+        --transition-fast: 150ms ease;
+        --transition-base: 250ms ease;
+        --transition-slow: 350ms ease;
+
+        /* -------- 布局 -------- */
+        --container-max: 1200px;
+        --nav-height: 72px;
+    }
+
+    /*
+    ============================================================
+    CSS 重置 & 基础样式
+    ============================================================
+    */
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+    }
+
+    body {
+        font-family: var(--font-family);
+        font-size: var(--font-size-base);
+        line-height: 1.7;
+        color: var(--color-dark);
+        background-color: var(--color-bg);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    ul, ol { list-style: none; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    input, button, textarea, select {
+        font-family: inherit;
+        font-size: inherit;
+    }
+    button { cursor: pointer; border: none; background: none; }
+
+    /* 容器 */
+    .container {
+        width: 100%;
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 var(--space-6);
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    /*
+    ============================================================
+    导航栏
+    ============================================================
+    */
+    .navbar {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        height: var(--nav-height);
+        background-color: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: var(--shadow-sm);
+        z-index: 1000;
+        transition: box-shadow var(--transition-base);
+    }
+    .navbar.scrolled { box-shadow: var(--shadow-md); }
+
+    .navbar__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .navbar__logo {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--color-primary);
+        user-select: none;
+    }
+
+    .navbar__logo-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: var(--font-size-lg);
+    }
+
+    .navbar__menu {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+    }
+
+    .navbar__link {
+        position: relative;
+        font-size: var(--font-size-base);
+        font-weight: 500;
+        color: var(--color-medium);
+        padding: var(--space-2) 0;
+        transition: color var(--transition-fast);
+    }
+
+    .navbar__link::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 0; height: 2px;
+        background-color: var(--color-primary);
+        border-radius: var(--radius-full);
+        transition: width var(--transition-base);
+    }
+
+    .navbar__link:hover { color: var(--color-primary); }
+    .navbar__link:hover::after { width: 100%; }
+
+    .navbar__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-3) var(--space-6);
+        background-color: var(--color-accent);
+        color: white;
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        border-radius: var(--radius-full);
+        transition: background-color var(--transition-fast), transform var(--transition-fast);
+    }
+    .navbar__cta:hover {
+        background-color: var(--color-accent-dark);
+        transform: translateY(-1px);
+    }
+
+    /* 汉堡菜单 */
+    .navbar__hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 40px; height: 40px;
+        padding: var(--space-2);
+        border-radius: var(--radius-md);
+        transition: background-color var(--transition-fast);
+    }
+    .navbar__hamburger:hover { background-color: var(--color-bg-alt); }
+    .navbar__hamburger span {
+        display: block;
+        width: 24px; height: 2px;
+        background-color: var(--color-dark);
+        border-radius: var(--radius-full);
+        transition: transform var(--transition-base), opacity var(--transition-base);
+    }
+    .navbar__hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .navbar__hamburger.active span:nth-child(2) { opacity: 0; }
+    .navbar__hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /*
+    ============================================================
+    移动端侧边菜单
+    ============================================================
+    */
+    .mobile-menu {
+        position: fixed;
+        top: 0; right: 0;
+        width: 280px; height: 100vh;
+        background-color: var(--color-bg);
+        box-shadow: var(--shadow-xl);
+        z-index: 999;
+        transform: translateX(100%);
+        transition: transform var(--transition-slow);
+        padding: var(--space-8) var(--space-6);
+    }
+    .mobile-menu.active { transform: translateX(0); }
+
+    .mobile-menu__overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 998;
+        opacity: 0; visibility: hidden;
+        transition: opacity var(--transition-base), visibility var(--transition-base);
+    }
+    .mobile-menu__overlay.active { opacity: 1; visibility: visible; }
+
+    .mobile-menu__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: var(--space-8);
+    }
+    .mobile-menu__close {
+        width: 40px; height: 40px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: var(--font-size-2xl);
+        color: var(--color-medium);
+        border-radius: var(--radius-md);
+        transition: background-color var(--transition-fast);
+    }
+    .mobile-menu__close:hover { background-color: var(--color-bg-alt); }
+
+    .mobile-menu__links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+    .mobile-menu__link {
+        display: block;
+        padding: var(--space-4);
+        font-size: var(--font-size-lg);
+        font-weight: 500;
+        color: var(--color-dark);
+        border-radius: var(--radius-md);
+        transition: background-color var(--transition-fast), color var(--transition-fast);
+    }
+    .mobile-menu__link:hover {
+        background-color: var(--color-primary-subtle);
+        color: var(--color-primary);
+    }
+    .mobile-menu__cta {
+        display: block;
+        margin-top: var(--space-6);
+        padding: var(--space-4);
+        background-color: var(--color-accent);
+        color: white;
+        text-align: center;
+        font-weight: 500;
+        border-radius: var(--radius-lg);
+        transition: background-color var(--transition-fast);
+    }
+    .mobile-menu__cta:hover { background-color: var(--color-accent-dark); }
+
+    /*
+    ============================================================
+    Hero 区域
+    ============================================================
+    */
+    .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        max-height: 900px;
+        margin-top: var(--nav-height);
+        overflow: hidden;
+        background: linear-gradient(135deg, #001a33 0%, #003366 50%, #004080 100%);
+    }
+
+    /* 工业网格背景装饰 */
+    .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+    }
+
+    /* 装饰性圆形 */
+    .hero::after {
+        content: '';
+        position: absolute;
+        right: -200px; top: -200px;
+        width: 600px; height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(232,113,26,0.15) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .hero__content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-2) var(--space-5);
+        background-color: rgba(232,113,26,0.15);
+        border: 1px solid rgba(232,113,26,0.4);
+        color: #f5a623;
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        border-radius: var(--radius-full);
+        margin-bottom: var(--space-6);
+        width: fit-content;
+        animation: fadeInDown 600ms ease-out;
+    }
+
+    .hero__title {
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        font-weight: 700;
+        color: white;
+        line-height: 1.2;
+        margin-bottom: var(--space-6);
+        max-width: 700px;
+        animation: fadeInUp 600ms ease-out 200ms both;
+    }
+
+    .hero__title em {
+        font-style: normal;
+        color: #f5a623;
+    }
+
+    .hero__desc {
+        font-size: var(--font-size-lg);
+        color: rgba(255,255,255,0.8);
+        max-width: 560px;
+        line-height: 1.8;
+        margin-bottom: var(--space-8);
+        animation: fadeInUp 600ms ease-out 400ms both;
+    }
+
+    .hero__actions {
+        display: flex;
+        gap: var(--space-4);
+        flex-wrap: wrap;
+        animation: fadeInUp 600ms ease-out 600ms both;
+    }
+
+    /* Hero 装饰产品图（CSS绘制的丝锥示意） */
+    .hero__decoration {
+        position: absolute;
+        right: 5%;
+        bottom: 10%;
+        z-index: 1;
+        opacity: 0.12;
+        pointer-events: none;
+    }
+
+    .hero__decoration svg {
+        width: 500px;
+        height: 400px;
+    }
+
+    /* 底部波浪分隔线 */
+    .hero__wave {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 80px;
+        z-index: 3;
+    }
+
+    .hero__wave svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    /*
+    ============================================================
+    按钮样式
+    ============================================================
+    */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-4) var(--space-8);
+        font-size: var(--font-size-base);
+        font-weight: 500;
+        border-radius: var(--radius-full);
+        transition: all var(--transition-fast);
+        cursor: pointer;
+    }
+
+    .btn--primary {
+        background-color: var(--color-accent);
+        color: white;
+        border: 2px solid var(--color-accent);
+    }
+    .btn--primary:hover {
+        background-color: var(--color-accent-dark);
+        border-color: var(--color-accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(232,113,26,0.35);
+    }
+
+    .btn--outline {
+        background-color: transparent;
+        color: white;
+        border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn--outline:hover {
+        background-color: rgba(255,255,255,0.1);
+        border-color: white;
+        transform: translateY(-2px);
+    }
+
+    .btn--blue {
+        background-color: var(--color-primary);
+        color: white;
+        border: 2px solid var(--color-primary);
+    }
+    .btn--blue:hover {
+        background-color: var(--color-primary-dark);
+        border-color: var(--color-primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0,51,102,0.3);
+    }
+
+    .btn--lg {
+        padding: var(--space-5) var(--space-10);
+        font-size: var(--font-size-lg);
+    }
+
+    /*
+    ============================================================
+    动画关键帧
+    ============================================================
+    */
+    @keyframes fadeInUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInLeft {
+        from { transform: translateX(-30px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    /*
+    ============================================================
+    区域标题
+    ============================================================
+    */
+    .section-header {
+        text-align: center;
+        margin-bottom: var(--space-16);
+    }
+
+    .section-tag {
+        display: inline-block;
+        padding: var(--space-2) var(--space-5);
+        background-color: rgba(0,51,102,0.08);
+        color: var(--color-primary);
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        border-radius: var(--radius-full);
+        margin-bottom: var(--space-4);
+        letter-spacing: 0.05em;
+    }
+
+    .section-title {
+        font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+        font-weight: 700;
+        color: var(--color-dark);
+        margin-bottom: var(--space-4);
+        line-height: 1.3;
+    }
+
+    .section-desc {
+        font-size: var(--font-size-lg);
+        color: var(--color-medium);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    /*
+    ============================================================
+    产品分类区域
+    ============================================================
+    */
+    .categories {
+        padding: var(--space-24) 0;
+        background-color: var(--color-bg);
+    }
+
+    .categories__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-6);
+    }
+
+    .category-card {
+        position: relative;
+        padding: var(--space-8) var(--space-6);
+        background: linear-gradient(145deg, var(--color-bg-alt), #e8eef5);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        text-align: center;
+        transition: all var(--transition-base);
+        overflow: hidden;
+    }
+
+    .category-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--transition-base);
+    }
+
+    .category-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-xl);
+        border-color: transparent;
+    }
+
+    .category-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    /* 丝锥图标区 */
+    .category-card__icon {
+        width: 80px; height: 80px;
+        margin: 0 auto var(--space-5);
+        background: var(--color-primary-subtle);
+        border-radius: var(--radius-xl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        transition: transform var(--transition-base);
+    }
+
+    .category-card:hover .category-card__icon {
+        transform: scale(1.08) rotate(-3deg);
+    }
+
+    .category-card__title {
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--color-dark);
+        margin-bottom: var(--space-3);
+    }
+
+    .category-card__desc {
+        font-size: var(--font-size-sm);
+        color: var(--color-medium);
+        line-height: 1.7;
+        margin-bottom: var(--space-5);
+    }
+
+    .category-card__link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        color: var(--color-primary);
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        transition: gap var(--transition-fast);
+    }
+
+    .category-card__link:hover {
+        gap: var(--space-3);
+        color: var(--color-accent);
+    }
+
+    /*
+    ============================================================
+    关于我们区域
+    ============================================================
+    */
+    .about {
+        padding: var(--space-24) 0;
+        background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    }
+
+    .about__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+        align-items: center;
+    }
+
+    /* 左侧内容 */
+    .about__content { }
+
+    .about__tag {
+        display: inline-block;
+        padding: var(--space-2) var(--space-4);
+        background-color: var(--color-primary-subtle);
+        color: var(--color-primary);
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        border-radius: var(--radius-full);
+        margin-bottom: var(--space-5);
+    }
+
+    .about__title {
+        font-size: clamp(var(--font-size-2xl), 3.5vw, var(--font-size-4xl));
+        font-weight: 700;
+        color: var(--color-dark);
+        line-height: 1.3;
+        margin-bottom: var(--space-5);
+    }
+
+    .about__text {
+        font-size: var(--font-size-base);
+        color: var(--color-medium);
+        line-height: 1.8;
+        margin-bottom: var(--space-6);
+    }
+
+    .about__features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+        margin-bottom: var(--space-8);
+    }
+
+    .about__feature {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+
+    .about__feature-icon {
+        width: 32px; height: 32px;
+        background-color: var(--color-primary-subtle);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-primary);
+        font-size: var(--font-size-base);
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .about__feature-text {
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        color: var(--color-dark);
+        line-height: 1.5;
+    }
+
+    /* 右侧工业图 */
+    .about__visual {
+        position: relative;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-xl);
+    }
+
+    .about__visual-img {
+        width: 100%;
+        height: 420px;
+        background: linear-gradient(135deg, #001a33 0%, #003366 60%, #004080 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* 工业装饰网格 */
+    .about__visual-img::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    .about__visual-text {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+    }
+
+    .about__visual-text .big-num {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1;
+        display: block;
+        color: #f5a623;
+    }
+
+    .about__visual-text .big-label {
+        font-size: var(--font-size-lg);
+        opacity: 0.8;
+    }
+
+    .about__visual-badge {
+        position: absolute;
+        bottom: var(--space-5);
+        right: var(--space-5);
+        background-color: var(--color-accent);
+        color: white;
+        padding: var(--space-3) var(--space-5);
+        border-radius: var(--radius-lg);
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        z-index: 3;
+    }
+
+    /*
+    ============================================================
+    产品展示区域
+    ============================================================
+    */
+    .products {
+        padding: var(--space-24) 0;
+        background-color: var(--color-bg);
+    }
+
+    .products__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-8);
+    }
+
+    .product-card {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        transition: all var(--transition-base);
+    }
+
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+        border-color: transparent;
+    }
+
+    /* 产品图片区 */
+    .product-card__img {
+        height: 220px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 每种产品不同背景色 */
+    .product-card:nth-child(1) .product-card__img { background: linear-gradient(145deg, #e8eef5, #d0dce8); }
+    .product-card:nth-child(2) .product-card__img { background: linear-gradient(145deg, #f5e8d0, #e8d0b0); }
+    .product-card:nth-child(3) .product-card__img { background: linear-gradient(145deg, #d8e8d0, #c0d8b0); }
+    .product-card:nth-child(4) .product-card__img { background: linear-gradient(145deg, #e8d8f5, #d0b8e8); }
+    .product-card:nth-child(5) .product-card__img { background: linear-gradient(145deg, #d8f0f5, #b0d8e8); }
+    .product-card:nth-child(6) .product-card__img { background: linear-gradient(145deg, #f5e0e0, #e8c0c0); }
+
+    .product-card__img-icon {
+        font-size: 4rem;
+        opacity: 0.5;
+        transition: transform var(--transition-base), opacity var(--transition-base);
+    }
+
+    .product-card:hover .product-card__img-icon {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+
+    .product-card__badge {
+        position: absolute;
+        top: var(--space-4);
+        left: var(--space-4);
+        padding: var(--space-1) var(--space-3);
+        background-color: var(--color-accent);
+        color: white;
+        font-size: var(--font-size-xs);
+        font-weight: 600;
+        border-radius: var(--radius-full);
+    }
+
+    .product-card__body {
+        padding: var(--space-6);
+    }
+
+    .product-card__specs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        margin-bottom: var(--space-4);
+    }
+
+    .product-card__spec {
+        padding: var(--space-1) var(--space-3);
+        background-color: var(--color-surface);
+        color: var(--color-medium);
+        font-size: var(--font-size-xs);
+        border-radius: var(--radius-full);
+        border: 1px solid var(--color-border);
+    }
+
+    .product-card__title {
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--color-dark);
+        margin-bottom: var(--space-3);
+    }
+
+    .product-card__desc {
+        font-size: var(--font-size-sm);
+        color: var(--color-medium);
+        line-height: 1.7;
+        margin-bottom: var(--space-5);
+    }
+
+    .product-card__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .product-card__price {
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--color-accent);
+    }
+
+    .product-card__price span {
+        font-size: var(--font-size-sm);
+        font-weight: 400;
+        color: var(--color-light);
+    }
+
+    .product-card__btn {
+        padding: var(--space-2) var(--space-5);
+        background-color: var(--color-primary);
+        color: white;
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        border-radius: var(--radius-full);
+        transition: all var(--transition-fast);
+    }
+
+    .product-card__btn:hover {
+        background-color: var(--color-primary-dark);
+    }
+
+    /*
+    ============================================================
+    统计数据区域
+    ============================================================
+    */
+    .stats {
+        padding: var(--space-20) 0;
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* 装饰圆 */
+    .stats::before {
+        content: '';
+        position: absolute;
+        left: -150px; top: -150px;
+        width: 400px; height: 400px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.03);
+    }
+
+    .stats::after {
+        content: '';
+        position: absolute;
+        right: -100px; bottom: -100px;
+        width: 300px; height: 300px;
+        border-radius: 50%;
+        background: rgba(232,113,26,0.1);
+    }
+
+    .stats__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-8);
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .stat-item__number {
+        font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+        font-weight: 700;
+        color: white;
+        line-height: 1;
+        margin-bottom: var(--space-2);
+    }
+
+    .stat-item__number span {
+        color: #f5a623;
+    }
+
+    .stat-item__label {
+        font-size: var(--font-size-base);
+        color: rgba(255,255,255,0.75);
+    }
+
+    /*
+    ============================================================
+    质量认证区域
+    ============================================================
+    */
+    .certifications {
+        padding: var(--space-24) 0;
+        background-color: var(--color-bg-alt);
+    }
+
+    .certifications__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-6);
+    }
+
+    .cert-card {
+        padding: var(--space-8);
+        background-color: var(--color-bg);
+        border-radius: var(--radius-xl);
+        text-align: center;
+        border: 1px solid var(--color-border);
+        transition: all var(--transition-base);
+    }
+
+    .cert-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+    }
+
+    .cert-card__icon {
+        width: 72px; height: 72px;
+        margin: 0 auto var(--space-4);
+        background: linear-gradient(135deg, var(--color-primary-subtle), #d0e0f0);
+        border-radius: var(--radius-xl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+    }
+
+    .cert-card__name {
+        font-size: var(--font-size-base);
+        font-weight: 700;
+        color: var(--color-dark);
+        margin-bottom: var(--space-2);
+    }
+
+    .cert-card__desc {
+        font-size: var(--font-size-sm);
+        color: var(--color-medium);
+        line-height: 1.6;
+    }
+
+    /*
+    ============================================================
+    客户评价区域
+    ============================================================
+    */
+    .testimonials {
+        padding: var(--space-24) 0;
+        background-color: var(--color-bg);
+    }
+
+    .testimonials__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-8);
+    }
+
+    .testimonial-card {
+        padding: var(--space-8);
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        transition: all var(--transition-base);
+    }
+
+    .testimonial-card:hover {
+        box-shadow: var(--shadow-lg);
+        border-color: var(--color-primary-subtle);
+    }
+
+    .testimonial-card__stars {
+        display: flex;
+        gap: var(--space-1);
+        margin-bottom: var(--space-4);
+    }
+
+    .testimonial-card__star {
+        color: var(--color-warning);
+        font-size: var(--font-size-lg);
+    }
+
+    .testimonial-card__text {
+        font-size: var(--font-size-base);
+        color: var(--color-medium);
+        line-height: 1.8;
+        margin-bottom: var(--space-6);
+        font-style: italic;
+        position: relative;
+        padding-left: var(--space-5);
+    }
+
+    .testimonial-card__text::before {
+        content: '"';
+        position: absolute;
+        left: 0;
+        top: -5px;
+        font-size: 3rem;
+        color: var(--color-primary);
+        opacity: 0.3;
+        font-style: normal;
+        line-height: 1;
+    }
+
+    .testimonial-card__author {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+    }
+
+    .testimonial-card__avatar {
+        width: 48px; height: 48px;
+        border-radius: var(--radius-full);
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: var(--font-size-lg);
+    }
+
+    .testimonial-card__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testimonial-card__name {
+        font-size: var(--font-size-base);
+        font-weight: 600;
+        color: var(--color-dark);
+    }
+
+    .testimonial-card__role {
+        font-size: var(--font-size-sm);
+        color: var(--color-light);
+    }
+
+    /*
+    ============================================================
+    咨询表单区域
+    ============================================================
+    */
+    .inquiry {
+        padding: var(--space-24) 0;
+        background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    }
+
+    .inquiry__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+        align-items: start;
+    }
+
+    .inquiry__info { }
+
+    .inquiry__info-title {
+        font-size: var(--font-size-3xl);
+        font-weight: 700;
+        color: var(--color-dark);
+        margin-bottom: var(--space-4);
+    }
+
+    .inquiry__info-desc {
+        font-size: var(--font-size-base);
+        color: var(--color-medium);
+        line-height: 1.8;
+        margin-bottom: var(--space-8);
+    }
+
+    .inquiry__details {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-5);
+    }
+
+    .inquiry__detail {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+
+    .inquiry__detail-icon {
+        width: 44px; height: 44px;
+        display: flex; align-items: center; justify-content: center;
+        background-color: var(--color-primary-subtle);
+        color: var(--color-primary);
+        border-radius: var(--radius-lg);
+        font-size: var(--font-size-lg);
+        flex-shrink: 0;
+    }
+
+    .inquiry__detail-label {
+        font-size: var(--font-size-sm);
+        color: var(--color-light);
+        margin-bottom: var(--space-1);
+    }
+
+    .inquiry__detail-value {
+        font-size: var(--font-size-base);
+        color: var(--color-dark);
+        font-weight: 500;
+    }
+
+    /* 表单 */
+    .inquiry-form {
+        background-color: var(--color-bg);
+        padding: var(--space-8);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .form-title {
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--color-dark);
+        margin-bottom: var(--space-6);
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-5);
+    }
+
+    .form-group {
+        margin-bottom: var(--space-5);
+    }
+
+    /* 非整行字段不设grid */
+    .form-group.full { grid-column: span 2; }
+
+    .form-label {
+        display: block;
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        color: var(--color-dark);
+        margin-bottom: var(--space-2);
+    }
+
+    .form-label .required {
+        color: var(--color-error);
+        margin-left: var(--space-1);
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+        width: 100%;
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--font-size-base);
+        color: var(--color-dark);
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(0,51,102,0.12);
+    }
+
+    .form-textarea {
+        resize: vertical;
+        min-height: 100px;
+        line-height: 1.6;
+    }
+
+    .form-submit {
+        width: 100%;
+        padding: var(--space-4);
+        background-color: var(--color-accent);
+        color: white;
+        font-size: var(--font-size-base);
+        font-weight: 600;
+        border-radius: var(--radius-lg);
+        border: none;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-2);
+    }
+
+    .form-submit:hover {
+        background-color: var(--color-accent-dark);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }
+
+    /*
+    ============================================================
+    页脚
+    ============================================================
+    */
+    .footer {
+        background-color: var(--color-dark);
+        color: white;
+        padding: var(--space-16) 0 var(--space-8);
+    }
+
+    .footer__grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: var(--space-12);
+        margin-bottom: var(--space-12);
+    }
+
+    .footer__brand { max-width: 320px; }
+
+    .footer__logo {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: white;
+        margin-bottom: var(--space-4);
+    }
+
+    .footer__logo-icon {
+        width: 40px; height: 40px;
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        border-radius: var(--radius-md);
+        display: flex; align-items: center; justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: var(--font-size-lg);
+    }
+
+    .footer__desc {
+        font-size: var(--font-size-sm);
+        color: rgba(255,255,255,0.55);
+        line-height: 1.8;
+        margin-bottom: var(--space-5);
+    }
+
+    .footer__social {
+        display: flex;
+        gap: var(--space-3);
+    }
+
+    .footer__social-link {
+        width: 38px; height: 38px;
+        display: flex; align-items: center; justify-content: center;
+        background-color: rgba(255,255,255,0.1);
+        color: white;
+        border-radius: var(--radius-md);
+        font-size: var(--font-size-base);
+        transition: all var(--transition-fast);
+    }
+
+    .footer__social-link:hover {
+        background-color: var(--color-primary);
+        transform: translateY(-2px);
+    }
+
+    .footer__column-title {
+        font-size: var(--font-size-base);
+        font-weight: 600;
+        color: white;
+        margin-bottom: var(--space-5);
+    }
+
+    .footer__links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .footer__link {
+        font-size: var(--font-size-sm);
+        color: rgba(255,255,255,0.55);
+        transition: color var(--transition-fast);
+    }
+
+    .footer__link:hover { color: white; }
+
+    .footer__bottom {
+        padding-top: var(--space-8);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: var(--font-size-sm);
+        color: rgba(255,255,255,0.4);
+    }
+
+    .footer__legal {
+        display: flex;
+        gap: var(--space-6);
+    }
+
+    .footer__legal a {
+        color: rgba(255,255,255,0.4);
+        transition: color var(--transition-fast);
+    }
+
+    .footer__legal a:hover { color: white; }
+
+    /*
+    ============================================================
+    弹窗
+    ============================================================
+    */
+    .modal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: 2000;
+        opacity: 0; visibility: hidden;
+        transition: opacity var(--transition-base), visibility var(--transition-base);
+    }
+
+    .modal.active { opacity: 1; visibility: visible; }
+
+    .modal__backdrop {
+        position: absolute; inset: 0;
+        background-color: rgba(0,0,0,0.6);
+        backdrop-filter: blur(4px);
+    }
+
+    .modal__content {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        background-color: var(--color-bg);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-xl);
+        max-width: 500px;
+        width: calc(100% - var(--space-8));
+        max-height: calc(100vh - var(--space-16));
+        overflow-y: auto;
+        opacity: 0;
+        transition: transform var(--transition-base), opacity var(--transition-base);
+    }
+
+    .modal.active .modal__content {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    .modal.closing .modal__content {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+    }
+
+    .modal__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-6);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .modal__title {
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--color-dark);
+    }
+
+    .modal__close {
+        width: 36px; height: 36px;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--color-medium);
+        border-radius: var(--radius-md);
+        font-size: var(--font-size-xl);
+        transition: all var(--transition-fast);
+    }
+
+    .modal__close:hover {
+        background-color: var(--color-bg-alt);
+        color: var(--color-dark);
+    }
+
+    .modal__body {
+        padding: var(--space-6);
+    }
+
+    .modal-success-icon {
+        width: 64px; height: 64px;
+        margin: 0 auto var(--space-5);
+        background-color: var(--color-success);
+        color: white;
+        border-radius: var(--radius-full);
+        display: flex; align-items: center; justify-content: center;
+        font-size: var(--font-size-3xl);
+    }
+
+    .modal-success-title {
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--color-dark);
+        text-align: center;
+        margin-bottom: var(--space-3);
+    }
+
+    .modal-success-text {
+        font-size: var(--font-size-base);
+        color: var(--color-medium);
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .modal__footer {
+        padding: var(--space-6);
+        border-top: 1px solid var(--color-border);
+        display: flex;
+        gap: var(--space-3);
+        justify-content: flex-end;
+    }
+
+    .modal__btn {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        border-radius: var(--radius-lg);
+        transition: all var(--transition-fast);
+        cursor: pointer;
+    }
+
+    .modal__btn--secondary {
+        background-color: var(--color-bg-alt);
+        color: var(--color-medium);
+        border: 1px solid var(--color-border);
+    }
+
+    .modal__btn--secondary:hover {
+        background-color: var(--color-border);
+    }
+
+    .modal__btn--primary {
+        background-color: var(--color-primary);
+        color: white;
+        border: 1px solid var(--color-primary);
+    }
+
+    .modal__btn--primary:hover {
+        background-color: var(--color-primary-dark);
+    }
+
+    /*
+    ============================================================
+    滚动动画
+    ============================================================
+    */
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 600ms ease-out, transform 600ms ease-out;
+    }
+
+    .animate-on-scroll.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /*
+    ============================================================
+    响应式布局
+    ============================================================
+    */
+    @media (max-width: 1024px) {
+        .categories__grid { grid-template-columns: repeat(2, 1fr); }
+        .products__grid { grid-template-columns: repeat(2, 1fr); }
+        .testimonials__grid { grid-template-columns: 1fr; }
+        .stats__grid { grid-template-columns: repeat(2, 1fr); }
+        .certifications__grid { grid-template-columns: repeat(2, 1fr); }
+        .about__wrapper { grid-template-columns: 1fr; }
+        .inquiry__wrapper { grid-template-columns: 1fr; }
+        .footer__grid { grid-template-columns: repeat(2, 1fr); }
+        .footer__brand { grid-column: span 2; }
+        .hero__decoration { display: none; }
+    }
+
+    @media (max-width: 768px) {
+        .navbar__menu { display: none; }
+        .navbar__hamburger { display: flex; }
+        .hero { min-height: 520px; }
+        .hero__title { font-size: var(--font-size-3xl); }
+        .categories__grid { grid-template-columns: 1fr; }
+        .products__grid { grid-template-columns: 1fr; }
+        .stats__grid { grid-template-columns: repeat(2, 1fr); }
+        .certifications__grid { grid-template-columns: repeat(2, 1fr); }
+        .about__features { grid-template-columns: 1fr; }
+        .about__visual-img { height: 280px; }
+        .footer__grid { grid-template-columns: 1fr; }
+        .footer__brand { grid-column: span 1; }
+        .footer__bottom { flex-direction: column; gap: var(--space-4); text-align: center; }
+        .inquiry { padding: var(--space-16) 0; }
+        .categories, .products, .testimonials, .certifications { padding: var(--space-16) 0; }
+        .form-grid { grid-template-columns: 1fr; }
+        .form-group.full { grid-column: span 1; }
+    }
+
+    @media (max-width: 480px) {
+        :root { font-size: 14px; }
+        .container { padding: 0 var(--space-4); }
+        .hero__actions { flex-direction: column; }
+        .hero__actions .btn { width: 100%; justify-content: center; }
+        .stats__grid { grid-template-columns: 1fr; }
+        .certifications__grid { grid-template-columns: 1fr; }
+        .modal__content { width: calc(100% - var(--space-4)); }
+        .modal__footer { flex-direction: column; }
+        .modal__btn { width: 100%; }
+    }
+
+    /* 减少动画 */
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+        .animate-on-scroll { opacity: 1; transform: none; }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         导航栏
+         ============================================================ -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="#" class="navbar__logo" aria-label="圣熠机械首页">
+                <div class="navbar__logo-icon" aria-hidden="true">熠</div>
+                <span>圣熠机械</span>
+            </a>
+
+            <nav class="navbar__menu" aria-label="主导航">
+                <a href="#categories" class="navbar__link">产品分类</a>
+                <a href="#about" class="navbar__link">关于我们</a>
+                <a href="#products" class="navbar__link">产品中心</a>
+                <a href="#certifications" class="navbar__link">资质认证</a>
+                <a href="#testimonials" class="navbar__link">客户评价</a>
+                <a href="#inquiry" class="navbar__cta">
+                    在线询价
+                    <span aria-hidden="true">→</span>
+                </a>
+            </nav>
+
+            <button class="navbar__hamburger" id="hamburgerBtn"
+                    aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         移动端菜单
+         ============================================================ -->
+    <div class="mobile-menu__overlay" id="mobileOverlay" aria-hidden="true"></div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="移动端导航" aria-hidden="true">
+        <div class="mobile-menu__header">
+            <span style="font-size: var(--font-size-lg); font-weight: 600;">菜单</span>
+            <button class="mobile-menu__close" id="mobileCloseBtn" aria-label="关闭菜单">×</button>
+        </div>
+        <div class="mobile-menu__links">
+            <a href="#categories" class="mobile-menu__link">产品分类</a>
+            <a href="#about" class="mobile-menu__link">关于我们</a>
+            <a href="#products" class="mobile-menu__link">产品中心</a>
+            <a href="#certifications" class="mobile-menu__link">资质认证</a>
+            <a href="#testimonials" class="mobile-menu__link">客户评价</a>
+        </div>
+        <a href="#inquiry" class="mobile-menu__cta">在线询价</a>
+    </nav>
+
+    <!-- ============================================================
+         Hero 区域
+         ============================================================ -->
+    <section class="hero" id="hero" aria-label="丝锥产品介绍">
+        <div class="container hero__content">
+            <div class="hero__badge">
+                <span>🏭</span>
+                始于2003年 · 浙江温岭
+            </div>
+            <h1 class="hero__title">
+                专业<em>丝锥</em>制造商<br>
+                精密螺纹加工解决方案
+            </h1>
+            <p class="hero__desc">
+                圣熠机械专业生产各类高品质丝锥，产品远销日本、美国、德国等国际市场。20余年行业深耕，为精密制造提供可靠螺纹加工工具。
+            </p>
+            <div class="hero__actions">
+                <a href="#products" class="btn btn--primary btn--lg">
+                    浏览产品
+                    <span aria-hidden="true">→</span>
+                </a>
+                <a href="#inquiry" class="btn btn--outline btn--lg">
+                    获取报价
+                </a>
+            </div>
+        </div>
+
+        <!-- 装饰性丝锥 SVG 图 -->
+        <div class="hero__decoration" aria-hidden="true">
+            <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- 丝锥示意图 -->
+                <rect x="220" y="30" width="60" height="340" rx="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                <rect x="225" y="30" width="50" height="80" rx="6" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+                <!-- 切削刃 -->
+                <path d="M225 110 L250 160 L275 110" stroke="rgba(245,166,35,0.6)" stroke-width="2" fill="none"/>
+                <path d="M225 150 L250 200 L275 150" stroke="rgba(245,166,35,0.5)" stroke-width="2" fill="none"/>
+                <path d="M225 190 L250 240 L275 190" stroke="rgba(245,166,35,0.4)" stroke-width="2" fill="none"/>
+                <path d="M225 230 L250 280 L275 230" stroke="rgba(245,166,35,0.3)" stroke-width="2" fill="none"/>
+                <!-- 沟槽 -->
+                <rect x="240" y="110" width="20" height="8" rx="4" fill="rgba(0,0,0,0.2)"/>
+                <rect x="240" y="150" width="20" height="8" rx="4" fill="rgba(0,0,0,0.2)"/>
+                <rect x="240" y="190" width="20" height="8" rx="4" fill="rgba(0,0,0,0.2)"/>
+                <rect x="240" y="230" width="20" height="8" rx="4" fill="rgba(0,0,0,0.2)"/>
+                <rect x="240" y="270" width="20" height="8" rx="4" fill="rgba(0,0,0,0.2)"/>
+                <!-- 方榫 -->
+                <rect x="230" y="10" width="40" height="24" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            </svg>
+        </div>
+
+        <!-- 波浪分隔线 -->
+        <div class="hero__wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+                <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         产品分类区域
+         ============================================================ -->
+    <section class="categories" id="categories" aria-labelledby="categories-title">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-tag">产品分类</span>
+                <h2 class="section-title" id="categories-title">丝锥全系列产品</h2>
+                <p class="section-desc">
+                    覆盖所有常见螺纹规格，支持非标定制，广泛应用于机械制造、汽车、航空航天等领域
+                </p>
+            </header>
+
+            <div class="categories__grid">
+
+                <article class="category-card animate-on-scroll" style="transition-delay: 100ms;">
+                    <div class="category-card__icon">🔩</div>
+                    <h3 class="category-card__title">螺旋丝锥</h3>
+                    <p class="category-card__desc">
+                        适用于通孔螺纹加工，排屑性能优异，切削锋利，寿命长。规格：M2~M33
+                    </p>
+                    <a href="#products" class="category-card__link">
+                        查看详情 <span>→</span>
+                    </a>
+                </article>
+
+                <article class="category-card animate-on-scroll" style="transition-delay: 200ms;">
+                    <div class="category-card__icon">⚙️</div>
+                    <h3 class="category-card__title">直柄丝锥</h3>
+                    <p class="category-card__desc">
+                        通用型手用、机用丝锥，刚性好，精度高，适合盲孔和通孔加工。
+                    </p>
+                    <a href="#products" class="category-card__link">
+                        查看详情 <span>→</span>
+                    </a>
+                </article>
+
+                <article class="category-card animate-on-scroll" style="transition-delay: 300ms;">
+                    <div class="category-card__icon">🔧</div>
+                    <h3 class="category-card__title">管螺纹丝锥</h3>
+                    <p class="category-card__desc">
+                        G/Rc/NPT/PF等管螺纹标准，适用于管道、阀门、油管等管件加工。
+                    </p>
+                    <a href="#products" class="category-card__link">
+                        查看详情 <span>→</span>
+                    </a>
+                </article>
+
+                <article class="category-card animate-on-scroll" style="transition-delay: 400ms;">
+                    <div class="category-card__icon">⚡</div>
+                    <h3 class="category-card__title">挤压丝锥</h3>
+                    <p class="category-card__desc">
+                        无切屑螺纹成型，适用有色金属和低碳钢，表面质量好，强度高。
+                    </p>
+                    <a href="#products" class="category-card__link">
+                        查看详情 <span>→</span>
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         关于我们区域
+         ============================================================ -->
+    <section class="about" id="about" aria-labelledby="about-title">
+        <div class="container">
+            <div class="about__wrapper">
+
+                <div class="about__content animate-on-scroll">
+                    <span class="about__tag">关于我们</span>
+                    <h2 class="about__title" id="about-title">
+                        二十年匠心制造<br>
+                        精密螺纹工具专家
+                    </h2>
+                    <p class="about__text">
+                        浙江圣熠机械有限公司成立于2003年，位于浙江省温岭市东部新区，占地30亩，建筑面积13,800平方米，员工100余人。公司专注丝锥及机械零部件的研发、生产、销售与服务，产品远销日本、美国、法国、德国等国际市场。
+                    </p>
+                    <p class="about__text">
+                        我们与日本Kyokuto、美国GCT、法国SLD、德国矿业机械等国际知名企业建立长期战略合作关系，以先进的技术、优异的工艺、高品质的产品和真诚的服务赢得全球客户的信赖。
+                    </p>
+
+                    <div class="about__features">
+                        <div class="about__feature">
+                            <div class="about__feature-icon">✓</div>
+                            <span class="about__feature-text">ISO9001质量管理体系认证</span>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon">✓</div>
+                            <span class="about__feature-text">出口品质，远销欧美日</span>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon">✓</div>
+                            <span class="about__feature-text">支持非标定制，最小起订量灵活</span>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon">✓</div>
+                            <span class="about__feature-text">专业技术团队，7×24小时响应</span>
+                        </div>
+                    </div>
+
+                    <a href="#inquiry" class="btn btn--blue">
+                        联系我们 <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+
+                <div class="about__visual animate-on-scroll" style="transition-delay: 200ms;">
+                    <div class="about__visual-img">
+                        <div class="about__visual-text">
+                            <span class="big-num">2003</span>
+                            <span class="big-label">公司成立年份</span>
+                        </div>
+                    </div>
+                    <div class="about__visual-badge">🏭 ISO认证工厂</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         产品展示区域
+         ============================================================ -->
+    <section class="products" id="products" aria-labelledby="products-title">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-tag">产品中心</span>
+                <h2 class="section-title" id="products-title">热门丝锥产品</h2>
+                <p class="section-desc">
+                    精选畅销型号，品质可靠，库存充足，定制灵活
+                </p>
+            </header>
+
+            <div class="products__grid">
+
+                <!-- 产品1 -->
+                <article class="product-card animate-on-scroll" style="transition-delay: 100ms;">
+                    <div class="product-card__img">
+                        <div class="product-card__img-icon">🔩</div>
+                        <span class="product-card__badge">热销</span>
+                    </div>
+                    <div class="product-card__body">
+                        <div class="product-card__specs">
+                            <span class="product-card__spec">M3-M12</span>
+                            <span class="product-card__spec">HSS</span>
+                            <span class="product-card__spec">螺旋槽</span>
+                        </div>
+                        <h3 class="product-card__title">HSS螺旋丝锥 M3-M12</h3>
+                        <p class="product-card__desc">
+                            高速钢材质，螺旋槽设计，排屑顺畅，适用于通孔螺纹加工，精度等级ISO2。
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">¥8<span>-68元/支</span></div>
+                            <button class="product-card__btn" data-product="hss-spiral">咨询报价</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品2 -->
+                <article class="product-card animate-on-scroll" style="transition-delay: 200ms;">
+                    <div class="product-card__img">
+                        <div class="product-card__img-icon">⚙️</div>
+                        <span class="product-card__badge">新品</span>
+                    </div>
+                    <div class="product-card__body">
+                        <div class="product-card__specs">
+                            <span class="product-card__spec">M3-M20</span>
+                            <span class="product-card__spec">HSS-E</span>
+                            <span class="product-card__spec">钴合金</span>
+                        </div>
+                        <h3 class="product-card__title">HSS-E钴螺旋丝锥</h3>
+                        <p class="product-card__desc">
+                            含钴高速钢，耐高温性能优异，适合不锈钢和难加工材料，寿命提升3倍。
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">¥18<span>-128元/支</span></div>
+                            <button class="product-card__btn" data-product="hsse-spiral">咨询报价</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品3 -->
+                <article class="product-card animate-on-scroll" style="transition-delay: 300ms;">
+                    <div class="product-card__img">
+                        <div class="product-card__img-icon">🔧</div>
+                    </div>
+                    <div class="product-card__body">
+                        <div class="product-card__specs">
+                            <span class="product-card__spec">G1/8-G2</span>
+                            <span class="product-card__spec">管螺纹</span>
+                            <span class="product-card__spec">Rc/NPT</span>
+                        </div>
+                        <h3 class="product-card__title">管螺纹丝锥套装</h3>
+                        <p class="product-card__desc">
+                            涵盖G、Rc、NPT等多种管螺纹标准，配套完整，适合管道工程专业使用。
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">¥128<span>-680元/套</span></div>
+                            <button class="product-card__btn" data-product="pipe-tap">咨询报价</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品4 -->
+                <article class="product-card animate-on-scroll" style="transition-delay: 400ms;">
+                    <div class="product-card__img">
+                        <div class="product-card__img-icon">⚡</div>
+                        <span class="product-card__badge">推荐</span>
+                    </div>
+                    <div class="product-card__body">
+                        <div class="product-card__specs">
+                            <span class="product-card__spec">M2-M16</span>
+                            <span class="product-card__spec">挤压成型</span>
+                            <span class="product-card__spec">无屑</span>
+                        </div>
+                        <h3 class="product-card__title">挤压丝锥 M2-M16</h3>
+                        <p class="product-card__desc">
+                            螺纹无屑成型，内壁光洁，强度提升。广泛用于铝合金、铜合金工件。
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">¥28<span>-158元/支</span></div>
+                            <button class="product-card__btn" data-product="forming-tap">咨询报价</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品5 -->
+                <article class="product-card animate-on-scroll" style="transition-delay: 500ms;">
+                    <div class="product-card__img">
+                        <div class="product-card__img-icon">🔩</div>
+                    </div>
+                    <div class="product-card__body">
+                        <div class="product-card__specs">
+                            <span class="product-card__spec">M1-M6</span>
+                            <span class="product-card__spec">超细小径</span>
+                            <span class="product-card__spec">精密</span>
+                        </div>
+                        <h3 class="product-card__title">微型丝锥 M1-M6</h3>
+                        <p class="product-card__desc">
+                            精密微型规格，专为电子、仪器、仪表行业设计，公差控制在±0.005mm。
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">¥38<span>-98元/支</span></div>
+                            <button class="product-card__btn" data-product="micro-tap">咨询报价</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品6 -->
+                <article class="product-card animate-on-scroll" style="transition-delay: 600ms;">
+                    <div class="product-card__img">
+                        <div class="product-card__img-icon">⚙️</div>
+                        <span class="product-card__badge">定制</span>
+                    </div>
+                    <div class="product-card__body">
+                        <div class="product-card__specs">
+                            <span class="product-card__spec">非标定制</span>
+                            <span class="product-card__spec">特殊材质</span>
+                            <span class="product-card__spec">图纸加工</span>
+                        </div>
+                        <h3 class="product-card__title">非标特殊丝锥定制</h3>
+                        <p class="product-card__desc">
+                            根据客户图纸定制，提供材料选型建议，最小批量50支起订，7天交付。
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">面议<span>批量价格</span></div>
+                            <button class="product-card__btn" data-product="custom-tap">立即咨询</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         统计数据区域
+         ============================================================ -->
+    <section class="stats" aria-labelledby="stats-title">
+        <h2 id="stats-title" class="sr-only">企业实力数据</h2>
+        <div class="container">
+            <div class="stats__grid">
+
+                <div class="stat-item animate-on-scroll" style="transition-delay: 100ms;">
+                    <div class="stat-item__number" data-target="1280">0</div>
+                    <div class="stat-item__label">全球服务客户</div>
+                </div>
+
+                <div class="stat-item animate-on-scroll" style="transition-delay: 200ms;">
+                    <div class="stat-item__number" data-target="99">0<span>%</span></div>
+                    <div class="stat-item__label">客户满意度</div>
+                </div>
+
+                <div class="stat-item animate-on-scroll" style="transition-delay: 300ms;">
+                    <div class="stat-item__number" data-target="20">0<span>+</span></div>
+                    <div class="stat-item__label">年行业深耕</div>
+                </div>
+
+                <div class="stat-item animate-on-scroll" style="transition-delay: 400ms;">
+                    <div class="stat-item__number" data-target="50">0<span>+</span></div>
+                    <div class="stat-item__label">出口国家地区</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         质量认证区域
+         ============================================================ -->
+    <section class="certifications" id="certifications" aria-labelledby="certifications-title">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-tag">资质认证</span>
+                <h2 class="section-title" id="certifications-title">品质认证 · 值得信赖</h2>
+                <p class="section-desc">
+                    严格的质量管理体系，持续改进的制造工艺，确保每一支丝锥都达到国际标准
+                </p>
+            </header>
+
+            <div class="certifications__grid">
+
+                <article class="cert-card animate-on-scroll" style="transition-delay: 100ms;">
+                    <div class="cert-card__icon">🏆</div>
+                    <h3 class="cert-card__name">ISO 9001:2015</h3>
+                    <p class="cert-card__desc">质量管理体系认证，覆盖从原材料到成品的全流程质量控制。</p>
+                </article>
+
+                <article class="cert-card animate-on-scroll" style="transition-delay: 200ms;">
+                    <div class="cert-card__icon">🔬</div>
+                    <h3 class="cert-card__name">德国DIN标准</h3>
+                    <p class="cert-card__desc">产品符合德国DIN标准，通过欧洲市场准入认证，品质国际认可。</p>
+                </article>
+
+                <article class="cert-card animate-on-scroll" style="transition-delay: 300ms;">
+                    <div class="cert-card__icon">📐</div>
+                    <h3 class="cert-card__name">日本JIS标准</h3>
+                    <p class="cert-card__desc">符合日本JIS精密工具标准，长期供货日本Kyokuto等知名企业。</p>
+                </article>
+
+                <article class="cert-card animate-on-scroll" style="transition-delay: 400ms;">
+                    <div class="cert-card__icon">✅</div>
+                    <h3 class="cert-card__name">出口检验合格</h3>
+                    <p class="cert-card__desc">每批次产品经严格检验，提供材质证明和检测报告，品质可追溯。</p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         客户评价区域
+         ============================================================ -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-tag">客户评价</span>
+                <h2 class="section-title" id="testimonials-title">来自全球客户的选择</h2>
+                <p class="section-desc">
+                    众多国际知名企业信赖圣熠机械的产品与服务
+                </p>
+            </header>
+
+            <div class="testimonials__grid">
+
+                <article class="testimonial-card animate-on-scroll" style="transition-delay: 100ms;">
+                    <div class="testimonial-card__stars" aria-label="5星评分">
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                    </div>
+                    <blockquote class="testimonial-card__text">
+                        圣熠的HSS-E钴螺旋丝锥在我们工厂的不锈钢加工中表现优异，寿命是之前供应商的3倍，而且价格合理，交货准时。
+                    </blockquote>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar" aria-hidden="true">松</div>
+                        <div class="testimonial-card__info">
+                            <span class="testimonial-card__name">松下健一</span>
+                            <span class="testimonial-card__role">采购部长 · 日本Kyokuto工业</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card animate-on-scroll" style="transition-delay: 200ms;">
+                    <div class="testimonial-card__stars" aria-label="5星评分">
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                    </div>
+                    <blockquote class="testimonial-card__text">
+                        我们从2018年开始与圣熠合作，管螺纹丝锥的质量非常稳定，精度一致性好，完全符合我们DIN标准的严格要求。
+                    </blockquote>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar" aria-hidden="true">迈</div>
+                        <div class="testimonial-card__info">
+                            <span class="testimonial-card__name">Michael Schmidt</span>
+                            <span class="testimonial-card__role">技术总监 · 德国Bergmann GmbH</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card animate-on-scroll" style="transition-delay: 300ms;">
+                    <div class="testimonial-card__stars" aria-label="5星评分">
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                        <span class="testimonial-card__star" aria-hidden="true">★</span>
+                    </div>
+                    <blockquote class="testimonial-card__text">
+                        非标丝锥定制的响应速度很快，技术团队专业，根据我们的图纸给出的材料建议非常合理。已长期合作两年，非常满意。
+                    </blockquote>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar" aria-hidden="true">李</div>
+                        <div class="testimonial-card__info">
+                            <span class="testimonial-card__name">李志远</span>
+                            <span class="testimonial-card__role">采购经理 · 深圳精密机械集团</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         咨询表单区域
+         ============================================================ -->
+    <section class="inquiry" id="inquiry" aria-labelledby="inquiry-title">
+        <div class="container">
+            <div class="inquiry__wrapper">
+
+                <div class="inquiry__info animate-on-scroll">
+                    <h2 class="inquiry__info-title" id="inquiry-title">立即获取报价</h2>
+                    <p class="inquiry__info-desc">
+                        无论是标准产品采购还是非标定制需求，我们的专业技术团队将在24小时内为您提供详细的解决方案和报价。
+                    </p>
+
+                    <div class="inquiry__details">
+                        <div class="inquiry__detail">
+                            <div class="inquiry__detail-icon" aria-hidden="true">📍</div>
+                            <div>
+                                <div class="inquiry__detail-label">公司地址</div>
+                                <div class="inquiry__detail-value">浙江省温岭市东部新区第七大街26号</div>
+                            </div>
+                        </div>
+                        <div class="inquiry__detail">
+                            <div class="inquiry__detail-icon" aria-hidden="true">📞</div>
+                            <div>
+                                <div class="inquiry__detail-label">全国热线</div>
+                                <div class="inquiry__detail-value">400-888-6886</div>
+                            </div>
+                        </div>
+                        <div class="inquiry__detail">
+                            <div class="inquiry__detail-icon" aria-hidden="true">📱</div>
+                            <div>
+                                <div class="inquiry__detail-label">手机号码</div>
+                                <div class="inquiry__detail-value">+86 137-7768-6988</div>
+                            </div>
+                        </div>
+                        <div class="inquiry__detail">
+                            <div class="inquiry__detail-icon" aria-hidden="true">✉️</div>
+                            <div>
+                                <div class="inquiry__detail-label">电子邮箱</div>
+                                <div class="inquiry__detail-value">sales@zj-shengyi.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="inquiry-form animate-on-scroll" id="inquiryForm" novalidate style="transition-delay: 200ms;">
+                    <h3 class="form-title">在线询价</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="name">姓名 <span class="required" aria-label="必填">*</span></label>
+                            <input type="text" id="name" name="name" class="form-input"
+                                   placeholder="请输入您的姓名" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="company">公司名称</label>
+                            <input type="text" id="company" name="company" class="form-input"
+                                   placeholder="请输入公司名称" autocomplete="organization">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">联系电话 <span class="required" aria-label="必填">*</span></label>
+                            <input type="tel" id="phone" name="phone" class="form-input"
+                                   placeholder="请输入手机或座机" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">邮箱</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                   placeholder="请输入电子邮箱" autocomplete="email">
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label" for="product-type">产品类型</label>
+                            <select id="product-type" name="product-type" class="form-select">
+                                <option value="">请选择产品类型</option>
+                                <option value="hss-spiral">HSS螺旋丝锥</option>
+                                <option value="hsse-spiral">HSS-E钴螺旋丝锥</option>
+                                <option value="pipe-tap">管螺纹丝锥</option>
+                                <option value="forming-tap">挤压丝锥</option>
+                                <option value="micro-tap">微型丝锥</option>
+                                <option value="custom">非标定制</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label" for="specs">规格参数</label>
+                            <input type="text" id="specs" name="specs" class="form-input"
+                                   placeholder="如：M10×1.5 或 G1/2，请填写具体规格">
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label" for="quantity">需求数量</label>
+                            <input type="text" id="quantity" name="quantity" class="form-input"
+                                   placeholder="请填写预计采购数量">
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label" for="message">详细需求 <span class="required" aria-label="必填">*</span></label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                      placeholder="请描述您的具体需求，包括材料、精度等级、特殊要求等..."
+                                      required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="form-submit" id="formSubmitBtn" style="margin-top: var(--space-2);">
+                        <span>提交询价</span>
+                        <span aria-hidden="true">→</span>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         页脚
+         ============================================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <div class="footer__logo-icon" aria-hidden="true">熠</div>
+                        <span>圣熠机械</span>
+                    </div>
+                    <p class="footer__desc">
+                        浙江圣熠机械有限公司是一家专业从事丝锥及机械零部件研发、生产、销售的高新技术企业。自2003年成立以来，我们始终坚持"质量第一，客户至上"的理念，为全球客户提供高品质的精密螺纹加工工具。
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="微信">💬</a>
+                        <a href="#" class="footer__social-link" aria-label="微博">📱</a>
+                        <a href="#" class="footer__social-link" aria-label="领英">💼</a>
+                    </div>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__column-title">产品中心</h3>
+                    <nav class="footer__links" aria-label="产品链接">
+                        <a href="#products" class="footer__link">HSS螺旋丝锥</a>
+                        <a href="#products" class="footer__link">HSS-E钴丝锥</a>
+                        <a href="#products" class="footer__link">管螺纹丝锥</a>
+                        <a href="#products" class="footer__link">挤压丝锥</a>
+                        <a href="#products" class="footer__link">微型丝锥</a>
+                        <a href="#products" class="footer__link">非标定制</a>
+                    </nav>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__column-title">关于我们</h3>
+                    <nav class="footer__links" aria-label="公司链接">
+                        <a href="#about" class="footer__link">公司简介</a>
+                        <a href="#certifications" class="footer__link">资质认证</a>
+                        <a href="#testimonials" class="footer__link">客户评价</a>
+                        <a href="#" class="footer__link">新闻动态</a>
+                    </nav>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__column-title">联系我们</h3>
+                    <nav class="footer__links" aria-label="联系链接">
+                        <a href="#inquiry" class="footer__link">在线询价</a>
+                        <a href="tel:+8613777686988" class="footer__link">+86 137-7768-6988</a>
+                        <a href="mailto:sales@zj-shengyi.com" class="footer__link">sales@zj-shengyi.com</a>
+                        <a href="#" class="footer__link">人才招聘</a>
+                    </nav>
+                </div>
+
+            </div>
+
+            <div class="footer__bottom">
+                <p>© 2026 浙江圣熠机械有限公司 Zhejiang Shengyi Machinery Co., Ltd. 保留所有权利.</p>
+                <div class="footer__legal">
+                    <a href="#">隐私政策</a>
+                    <a href="#">使用条款</a>
+                    <a href="#">网站地图</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         弹窗
+         ============================================================ -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal__backdrop" id="modalBackdrop"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3 class="modal__title" id="modalTitle">提示</h3>
+                <button class="modal__close" id="modalClose" aria-label="关闭弹窗">×</button>
+            </div>
+            <div class="modal__body" id="modalBody"></div>
+            <div class="modal__footer">
+                <button class="modal__btn modal__btn--secondary" id="modalCancelBtn">取消</button>
+                <button class="modal__btn modal__btn--primary" id="modalConfirmBtn">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    ============================================================
+    JavaScript
+    ============================================================
+    -->
+    <script>
+    (function() {
+        'use strict';
+
+        // ============================================================
+        // 工具函数
+        // ============================================================
+
+        function domReady(callback) {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', callback);
+            } else {
+                callback();
+            }
+        }
+
+        function smoothScrollTo(target, offset) {
+            const element = typeof target === 'string' ? document.querySelector(target) : target;
+            if (!element) return;
+            const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 72;
+            const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight - offset;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+
+        // ============================================================
+        // 导航栏滚动效果
+        // ============================================================
+        function initNavbarScroll() {
+            const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+            let ticking = false;
+
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        navbar.classList.toggle('scrolled', window.scrollY > 50);
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+
+        // ============================================================
+        // 移动端菜单
+        // ============================================================
+        function initMobileMenu() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+            const mobileLinks = document.querySelectorAll('.mobile-menu__link, .mobile-menu__cta');
+
+            function openMenu() {
+                mobileMenu.classList.add('active');
+                mobileOverlay.classList.add('active');
+                hamburgerBtn.classList.add('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            if (hamburgerBtn) hamburgerBtn.addEventListener('click', function() {
+                openMenu();
+            });
+
+            if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMenu);
+            if (mobileOverlay) mobileOverlay.addEventListener('click', closeMenu);
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        }
+
+        // ============================================================
+        // 导航链接平滑滚动
+        // ============================================================
+        function initNavScrollLinks() {
+            document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#') && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) smoothScrollTo(target, 0);
+                    }
+                });
+            });
+        }
+
+        // ============================================================
+        // 数字递增动画
+        // ============================================================
+        function initCounterAnimation() {
+            const counters = document.querySelectorAll('.stat-item__number[data-target]');
+            if (counters.length === 0) return;
+            let animated = false;
+
+            function animateCounter(counter, target, suffix, duration) {
+                const startTime = performance.now();
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeProgress = 1 - Math.pow(1 - progress, 4);
+                    const currentValue = Math.floor(target * easeProgress);
+                    counter.textContent = currentValue + (suffix || '');
+                    if (progress < 1) requestAnimationFrame(update);
+                    else counter.textContent = target + (suffix || '');
+                }
+                requestAnimationFrame(update);
+            }
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting && !animated) {
+                        animated = true;
+                        counters.forEach(function(counter) {
+                            const raw = counter.getAttribute('data-target');
+                            const target = parseInt(raw, 10);
+                            const suffixMatch = raw.match(/[^\d]+$/);
+                            const suffix = suffixMatch ? suffixMatch[0] : '';
+                            animateCounter(counter, target, suffix, 2000);
+                        });
+                        observer.disconnect();
+                    }
+                }, { threshold: 0.3 });
+                if (counters[0]) observer.observe(counters[0].closest('.stats') || counters[0]);
+            }
+        }
+
+        // ============================================================
+        // 滚动动画
+        // ============================================================
+        function initScrollAnimations() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            if (elements.length === 0) return;
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animated');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+                elements.forEach(function(el) { observer.observe(el); });
+            } else {
+                elements.forEach(function(el) { el.classList.add('animated'); });
+            }
+        }
+
+        // ============================================================
+        // 表单验证
+        // ============================================================
+        function initInquiryForm() {
+            const form = document.getElementById('inquiryForm');
+            if (!form) return;
+
+            function showError(input, message) {
+                clearError(input);
+                input.style.borderColor = 'var(--color-error)';
+                input.style.boxShadow = '0 0 0 3px rgba(198,40,40,0.12)';
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'form-error';
+                errorDiv.textContent = message;
+                errorDiv.style.cssText = 'color:var(--color-error);font-size:0.75rem;margin-top:0.25rem;';
+                errorDiv.setAttribute('role', 'alert');
+                input.parentNode.appendChild(errorDiv);
+            }
+
+            function clearError(input) {
+                input.style.borderColor = '';
+                input.style.boxShadow = '';
+                const err = input.parentNode.querySelector('.form-error');
+                if (err) err.remove();
+            }
+
+            function isValidPhone(phone) {
+                if (!phone) return false;
+                return /^1[3-9]\d{9}$/.test(phone) || /^0\d{2,3}-?\d{7,8}$/.test(phone);
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+
+                const nameInput = document.getElementById('name');
+                const phoneInput = document.getElementById('phone');
+                const messageInput = document.getElementById('message');
+
+                [nameInput, phoneInput, messageInput].forEach(clearError);
+
+                if (!nameInput.value.trim()) {
+                    showError(nameInput, '请输入您的姓名');
+                    isValid = false;
+                }
+
+                if (!phoneInput.value.trim()) {
+                    showError(phoneInput, '请输入联系电话');
+                    isValid = false;
+                } else if (!isValidPhone(phoneInput.value.trim())) {
+                    showError(phoneInput, '请输入有效的手机号或座机号');
+                    isValid = false;
+                }
+
+                if (!messageInput.value.trim()) {
+                    showError(messageInput, '请填写您的需求');
+                    isValid = false;
+                } else if (messageInput.value.trim().length < 10) {
+                    showError(messageInput, '请详细描述您的需求，至少10个字');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    const firstError = form.querySelector('.form-input[style*="border-color: var(--color-error)"]');
+                    if (firstError) firstError.focus();
+                    return;
+                }
+
+                showModal({
+                    title: '提交成功',
+                    content: '<div style="text-align:center;"><div class="modal-success-icon">✓</div><h4 class="modal-success-title">感谢您的询价！</h4><p class="modal-success-text">我们的销售工程师将在24小时内与您联系，请保持电话畅通。</p></div>',
+                    showCancel: false,
+                    confirmText: '我知道了',
+                    onConfirm: function() {
+                        hideModal();
+                        form.reset();
+                    }
+                });
+            });
+
+            ['name', 'phone', 'message'].forEach(function(id) {
+                const input = document.getElementById(id);
+                if (input) {
+                    input.addEventListener('input', function() { clearError(input); });
+                    input.addEventListener('blur', function() {
+                        if (id === 'name' && !input.value.trim()) showError(input, '请输入您的姓名');
+                        if (id === 'phone' && input.value.trim() && !isValidPhone(input.value.trim())) showError(input, '请输入有效的手机号或座机号');
+                        if (id === 'message' && !input.value.trim()) showError(input, '请填写您的需求');
+                    });
+                }
+            });
+        }
+
+        // ============================================================
+        // 产品咨询弹窗
+        // ============================================================
+        function initProductModal() {
+            const productBtns = document.querySelectorAll('.product-card__btn[data-product]');
+
+            const productData = {
+                'hss-spiral': { title: 'HSS螺旋丝锥 M3-M12', content: '<p style="color:var(--color-medium);line-height:1.8;">高速钢材质，螺旋槽设计，排屑性能优异。适用于通孔螺纹加工，精度等级ISO2（6H）。</p><ul style="margin:1rem 0 0 1.25rem;color:var(--color-medium);list-style:disc;line-height:2;"><li>材质：HSS (高速钢)</li><li>规格：M3, M4, M5, M6, M8, M10, M12</li><li>螺距：标准公制螺距</li><li>精度：ISO2 / 6H</li><li>表面处理：发黑/氧化</li><li>包装：1支/盒，10盒/箱</li></ul>' },
+                'hsse-spiral': { title: 'HSS-E钴螺旋丝锥', content: '<p style="color:var(--color-medium);line-height:1.8;">含钴高速钢，耐高温性能优异，专为难加工材料设计。寿命是普通HSS的3倍以上。</p><ul style="margin:1rem 0 0 1.25rem;color:var(--color-medium);list-style:disc;line-height:2;"><li>材质：HSS-E（钴合金高速钢）</li><li>适用材料：不锈钢、合金钢、耐热钢</li><li>规格：M3 ~ M20</li><li>表面处理：TiN涂层（可选）</li><li>包装：1支/盒</li></ul>' },
+                'pipe-tap': { title: '管螺纹丝锥套装', content: '<p style="color:var(--color-medium);line-height:1.8;">涵盖G、Rc、NPT等多种管螺纹标准，配套底钻和板牙，一站式解决管螺纹加工需求。</p><ul style="margin:1rem 0 0 1.25rem;color:var(--color-medium);list-style:disc;line-height:2;"><li>标准：G(ISO228), Rc(ISO7), NPT(ANSI)</li><li>规格：G1/8 ~ G2，NPT1/8 ~ NPT1</li><li>材质：HSS-E 钴高速钢</li><li>套装内容：丝锥+底钻+板牙+扳手</li></ul>' },
+                'forming-tap': { title: '挤压丝锥 M2-M16', content: '<p style="color:var(--color-medium);line-height:1.8;">无切屑螺纹成型，加工后内壁光洁，螺纹强度提升20%。广泛用于铝合金、铜合金工件。</p><ul style="margin:1rem 0 0 1.25rem;color:var(--color-medium);list-style:disc;line-height:2;"><li>材质：HSS-E 钴高速钢</li><li>适用材料：铝合金、紫铜、黄铜、低碳钢</li><li>规格：M2 ~ M16</li><li>特点：无屑成型，内壁光洁度高</li></ul>' },
+                'micro-tap': { title: '微型丝锥 M1-M6', content: '<p style="color:var(--color-medium);line-height:1.8;">精密微型规格，专为电子、仪器、仪表行业设计，公差控制在±0.005mm。</p><ul style="margin:1rem 0 0 1.25rem;color:var(--color-medium);list-style:disc;line-height:2;"><li>材质：超细晶粒硬质合金（可选）</li><li>规格：M1, M1.2, M1.6, M2, M2.5, M3, M4, M5, M6</li><li>精度：ISO2（6H）或更高</li><li>柄径：标准3mm / 细柄可选</li></ul>' },
+                'custom-tap': { title: '非标丝锥定制', content: '<p style="color:var(--color-medium);line-height:1.8;">根据客户提供的图纸或样品定制，提供材料选型建议和工艺优化方案。</p><ul style="margin:1rem 0 0 1.25rem;color:var(--color-medium);list-style:disc;line-height:2;"><li>最小批量：50支起订</li><li>交付周期：7-15个工作日</li><li>可提供：材质证明、检测报告、样品确认</li><li>可选材料：HSS、HSS-E、硬质合金、粉末冶金钢</li><li>可做特殊涂层：TiN、TiAlN、CrN等</li></ul>' }
+            };
+
+            productBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-product');
+                    const product = productData[productId];
+                    if (product) {
+                        showModal({
+                            title: product.title,
+                            content: product.content,
+                            showCancel: true,
+                            cancelText: '关闭',
+                            confirmText: '立即询价',
+                            onConfirm: function() {
+                                hideModal();
+                                smoothScrollTo('#inquiry', 0);
+                                // 预填产品类型
+                                const typeSelect = document.getElementById('product-type');
+                                if (typeSelect && productId) {
+                                    [...typeSelect.options].forEach(function(opt) {
+                                        if (opt.value === productId) opt.selected = true;
+                                    });
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
+        // ============================================================
+        // 弹窗系统
+        // ============================================================
+        const modal = { element: null, onConfirmCallback: null, onCancelCallback: null, isOpen: false };
+
+        function showModal(options) {
+            const modalEl = document.getElementById('modal');
+            const titleEl = document.getElementById('modalTitle');
+            const bodyEl = document.getElementById('modalBody');
+            const cancelBtn = document.getElementById('modalCancelBtn');
+            const confirmBtn = document.getElementById('modalConfirmBtn');
+            if (!modalEl) return;
+
+            if (titleEl) titleEl.textContent = options.title || '提示';
+            if (bodyEl) bodyEl.innerHTML = options.content || '';
+            if (cancelBtn) {
+                cancelBtn.style.display = options.showCancel !== false ? '' : 'none';
+                cancelBtn.textContent = options.cancelText || '取消';
+            }
+            if (confirmBtn) confirmBtn.textContent = options.confirmText || '确定';
+            modal.onConfirmCallback = options.onConfirm || null;
+            modal.onCancelCallback = options.onCancel || null;
+
+            modalEl.classList.remove('closing');
+            modalEl.classList.add('active');
+            modal.isOpen = true;
+            setTimeout(function() { if (confirmBtn) confirmBtn.focus(); }, 100);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideModal() {
+            const modalEl = document.getElementById('modal');
+            if (!modalEl) return;
+            modalEl.classList.add('closing');
+            setTimeout(function() {
+                modalEl.classList.remove('active', 'closing');
+                modal.isOpen = false;
+                document.body.style.overflow = '';
+            }, 250);
+        }
+
+        function initModal() {
+            const modalEl = document.getElementById('modal');
+            const backdrop = document.getElementById('modalBackdrop');
+            const closeBtn = document.getElementById('modalClose');
+            const cancelBtn = document.getElementById('modalCancelBtn');
+            const confirmBtn = document.getElementById('modalConfirmBtn');
+
+            if (backdrop) backdrop.addEventListener('click', function() { hideModal(); if (modal.onCancelCallback) modal.onCancelCallback(); });
+            if (closeBtn) closeBtn.addEventListener('click', function() { hideModal(); if (modal.onCancelCallback) modal.onCancelCallback(); });
+            if (cancelBtn) cancelBtn.addEventListener('click', function() { hideModal(); if (modal.onCancelCallback) modal.onCancelCallback(); });
+            if (confirmBtn) confirmBtn.addEventListener('click', function() { if (modal.onConfirmCallback) modal.onConfirmCallback(); else hideModal(); });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.isOpen) {
+                    hideModal();
+                    if (modal.onCancelCallback) modal.onCancelCallback();
+                }
+            });
+
+            modalEl.addEventListener('keydown', function(e) {
+                if (e.key !== 'Tab') return;
+                const focusable = modalEl.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                const first = focusable[0], last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            });
+        }
+
+        // ============================================================
+        // 返回顶部按钮
+        // ============================================================
+        function initBackToTop() {
+            const btn = document.createElement('button');
+            btn.className = 'back-to-top';
+            btn.setAttribute('aria-label', '返回顶部');
+            btn.innerHTML = '↑';
+            btn.style.cssText = 'position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background-color:var(--color-primary);color:white;border:none;border-radius:50%;font-size:1.25rem;cursor:pointer;z-index:900;opacity:0;visibility:hidden;transform:translateY(20px);transition:all 0.3s ease;box-shadow:0 4px 12px rgba(0,51,102,0.3);display:flex;align-items:center;justify-content:center;';
+            document.body.appendChild(btn);
+
+            function update() {
+                const show = window.scrollY > 400;
+                btn.style.opacity = show ? '1' : '0';
+                btn.style.visibility = show ? 'visible' : 'hidden';
+                btn.style.transform = show ? 'translateY(0)' : 'translateY(20px)';
+            }
+
+            window.addEventListener('scroll', update, { passive: true });
+            btn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            btn.addEventListener('mouseenter', function() { btn.style.backgroundColor = 'var(--color-primary-dark)'; btn.style.transform = 'translateY(-3px)'; });
+            btn.addEventListener('mouseleave', function() { btn.style.backgroundColor = 'var(--color-primary)'; btn.style.transform = 'translateY(0)'; });
+        }
+
+        // ============================================================
+        // 主初始化
+        // ============================================================
+        function init() {
+            initNavbarScroll();
+            initMobileMenu();
+            initNavScrollLinks();
+            initCounterAnimation();
+            initScrollAnimations();
+            initInquiryForm();
+            initProductModal();
+            initModal();
+            initBackToTop();
+        }
+
+        domReady(init);
+    })();
+    </script>
+
+</body>
+</html>
